@@ -1,13 +1,13 @@
 # main.tf
 
 # Create a resource group
-resource "azurerm_resource_group" "Adilson" {
+resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
 }
 
 # Create the AKS cluster
-resource "azurerm_kubernetes_cluster" "aks-turkey" {
+resource "azurerm_kubernetes_cluster" "aks" {
   name                = var.cluster_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
